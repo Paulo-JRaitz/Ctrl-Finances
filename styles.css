@@ -1,0 +1,294 @@
+/*Global ----------------------*/
+:root {
+  --light-blue: #363f5f;
+  --dark-blue: #1f2a58;
+  --light-green: #56bb45;
+  --dark-green: #2a7c1c;
+  --white: #ffffff;
+  --dark-gray: #1a1a1a;
+  --dark-opac: #000000b3;
+  --gray: #70707013;
+  --light-gray: #ececec;
+  --dark-yellow: #fcbd38;
+  --red: #e92929;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 93.75%;
+}
+
+body {
+  font-family: 'Mukta', sans-serif;
+  background-color: var(--light-gray);
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  width: min(90vw, 800px);
+  margin: auto;
+}
+
+/*Titles ----------------------*/
+h2 {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--light-blue);
+  font-weight: normal;
+}
+
+/*Links and Buttons -----------*/
+
+a {
+  color: var(--light-green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--dark-green);
+}
+
+.button.new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: var(--white);
+  background: var(--dark-green);
+  padding: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.button.cancel {
+  color: var(--red);
+  border: 2px var(--red) solid;
+  border-radius: 0.25rem;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.button.cancel:hover {
+  opacity: 1;
+}
+
+button:hover {
+  background: var(--dark-green);
+  opacity: 1;
+}
+
+/*Header ----------------------*/
+header {
+  z-index: -1;
+  background-color: var(--dark-gray);
+  padding: 2rem 0 7rem;
+  text-align: center;
+}
+
+#logo {
+  margin-top: 4rem;
+  width: 300px;
+}
+
+/*Balance ----------------------*/
+
+#balance {
+  margin-top: -4rem;
+}
+#balance h2 {
+  color: var(--white);
+  margin-top: 0;
+}
+
+/*Cards ----------------------*/
+.card {
+  background: rgb(255, 255, 255);
+  box-shadow: 6px 6px 4px var(--gray);
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+  color: var(--light-blue);
+}
+
+.card h3 {
+  font-weight: normal;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card p {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1rem;
+}
+
+.card.total {
+  background: var(--light-green);
+  color: var(--white);
+}
+
+/*Table ----------------------*/
+#transaction {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+#data-table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  color: var(--light-blue);
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem;
+}
+
+table thead th {
+  background-color: var(--white);
+  font-weight: normal;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+
+table tbody tr {
+  opacity: 0.7;
+}
+table tbody tr:hover {
+  opacity: 1;
+}
+
+table tbody td {
+  background-color: var(--white);
+  padding: 1rem 2rem;
+}
+
+td.description {
+  color: var(--dark-blue);
+}
+
+td.income {
+  color: var(--light-green);
+  font-weight: bold;
+}
+
+td.expense {
+  color: var(--red);
+  font-weight: bold;
+}
+
+/* Modal ----------------------*/
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-opac);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: #f0f2f5;
+  padding: 2.4rem;
+
+  position: relative;
+  z-index: 1;
+}
+
+/*Form -------------------------*/
+#form {
+  max-width: 500px;
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+input {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+}
+
+.input-group .help {
+  opacity: 0.4;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+  width: 48%;
+}
+
+/*Footer ----------------------*/
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color: var(--dark-yellow);
+  opacity: 0.6;
+}
+
+/*Responsive -------------------*/
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 1.5rem;
+  }
+}
